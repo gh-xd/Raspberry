@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.1 模块 · GitBook</title>
+        <title>2.3 固定IP地址 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="perspective.html" />
+    <link rel="next" href="passwd.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="updateupgrade.html" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
             
-                <a href="./">
+                <a href="../introduction/">
             
                     
                     1. Raspberry简介
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="mod.html">
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/mod.html">
             
-                <a href="mod.html">
+                <a href="../introduction/mod.html">
             
                     
                     2.1 模块
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="perspective.html">
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/perspective.html">
             
-                <a href="perspective.html">
+                <a href="../introduction/perspective.html">
             
                     
                     2.2 两大方向
@@ -147,9 +147,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../setting/">
+        <li class="chapter " data-level="1.3" data-path="./">
             
-                <a href="../setting/">
+                <a href="./">
             
                     
                     2. 连接树莓派
@@ -161,9 +161,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../setting/wifi.html">
+        <li class="chapter " data-level="1.3.1" data-path="wifi.html">
             
-                <a href="../setting/wifi.html">
+                <a href="wifi.html">
             
                     
                     2.1 接入WIFI
@@ -174,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../setting/updateupgrade.html">
+        <li class="chapter " data-level="1.3.2" data-path="updateupgrade.html">
             
-                <a href="../setting/updateupgrade.html">
+                <a href="updateupgrade.html">
             
                     
                     2.2 更新系统
@@ -187,9 +187,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../setting/ip.html">
+        <li class="chapter active" data-level="1.3.3" data-path="ip.html">
             
-                <a href="../setting/ip.html">
+                <a href="ip.html">
             
                     
                     2.3 固定IP地址
@@ -200,9 +200,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../setting/passwd.html">
+        <li class="chapter " data-level="1.3.4" data-path="passwd.html">
             
-                <a href="../setting/passwd.html">
+                <a href="passwd.html">
             
                     
                     2.4 修改密码
@@ -213,9 +213,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../setting/ssh.html">
+        <li class="chapter " data-level="1.3.5" data-path="ssh.html">
             
-                <a href="../setting/ssh.html">
+                <a href="ssh.html">
             
                     
                     2.5 SSH远程登录
@@ -461,7 +461,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >2.1 模块</a>
+        <a href="../.." >2.3 固定IP地址</a>
     </h1>
 </div>
 
@@ -476,12 +476,27 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="21-&#x6A21;&#x5757;">2.1 &#x6A21;&#x5757;</h1>
-<h4 id="&#x914D;&#x7F6E;virtualenv"><font color="#A52A2A">&#x914D;&#x7F6E;Virtualenv</font></h4>
-<p>&#x914D;&#x7F6E;&#x754C;&#x9762;</p>
-<blockquote>
-<p>sudo raspi-config</p>
-</blockquote>
+                                <h1 id="23-&#x56FA;&#x5B9A;ip&#x5730;&#x5740;">2.3 &#x56FA;&#x5B9A;IP&#x5730;&#x5740;</h1>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8BBE;&#x7F6E;&#x56FA;&#x5B9A;ip"><font color="#A52A2A">&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8BBE;&#x7F6E;&#x56FA;&#x5B9A;IP</font></h3>
+<p>&#x6811;&#x8393;&#x6D3E;&#x6BCF;&#x6B21;&#x8FDE;&#x63A5;&#x5230;&#x5C40;&#x57DF;&#x7F51;&#x7684;&#x8DEF;&#x7531;&#x5668;&#xFF0C;&#x90FD;&#x4F1A;&#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x5668;&#x7684;DHCP&#x8FDB;&#x884C;&#x968F;&#x673A;&#x7684;&#x52A8;&#x6001;&#x5730;&#x5740;&#x5206;&#x914D;&#x3002;</p>
+<p>&#x6BCF;&#x6B21;&#x5BF9;&#x6811;&#x8393;&#x6D3E;&#x8FDB;&#x884C;SSH&#x8FDC;&#x7A0B;&#x8FDE;&#x63A5;&#xFF0C;IP&#x5730;&#x5740;&#x90FD;&#x4E0D;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x8BBE;&#x7F6E;&#x56FA;&#x5B9A;IP&#x5730;&#x5740;&#x65B9;&#x4FBF;&#x4F7F;&#x7528;&#x7535;&#x8111;&#x8FDC;&#x7A0B;&#x8FDE;&#x63A5;&#x6811;&#x8393;&#x6D3E;&#x3002;</p>
+<h3 id="&#x4FEE;&#x6539;dhcp&#xFF08;&#x52A8;&#x6001;&#x5730;&#x5740;&#x5206;&#x914D;&#xFF09;"><font color="#A52A2A">&#x4FEE;&#x6539;DHCP&#xFF08;&#x52A8;&#x6001;&#x5730;&#x5740;&#x5206;&#x914D;&#xFF09;</font></h3>
+<p>1. &#x4FEE;&#x6539;<code>etc/dhcpcd.conf</code>&#x6587;&#x4EF6;</p>
+<pre><code>sudo nano /etc/dhcpcd.conf
+</code></pre><p>2. &#x5728;&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>interface wlan0
+static ip_address=192.168.0.xx/24
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1
+</code></pre><p>3. &#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x91CD;&#x542F;&#x6811;&#x8393;&#x6D3E;</p>
+<pre><code>sudo reboot
+</code></pre><p>&#x5176;&#x4E2D;wlan0&#x662F;&#x8BBE;&#x7F6E;WiFi&#x8FDE;&#x63A5;&#x7684;&#x9759;&#x6001;IP&#xFF0C;&#x5982;&#x679C;&#x8981;&#x8BBE;&#x7F6E;&#x4EE5;&#x592A;&#x7F51;&#x6709;&#x7EBF;&#x8FDE;&#x63A5;&#x7684;&#x9759;&#x6001;IP&#x90A3;&#x5C31;&#x8981;&#x518D;&#x52A0;&#x4E0A;eth0</p>
+<h3 id="&#x53C2;&#x8003;"><font color="#A52A2A">&#x53C2;&#x8003;</font></h3>
+<p><a href="https://cloud.tencent.com/developer/article/1640488" target="_blank">&#x5982;&#x4F55;&#x7ED9;&#x6811;&#x8393;&#x6D3E;&#x8BBE;&#x7F6E;&#x9759;&#x6001;IP</a></p>
+<p><a href="https://www.cnblogs.com/peida/archive/2013/02/27/2934525.html" target="_blank">ifconfig&#x547D;&#x4EE4;</a></p>
+<p><a href="https://www.labno3.com/2021/01/27/how-to-setup-a-raspberry-pi-static-ip-address/" target="_blank">&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;IP&#x8BBF;&#x95EE;&#x6811;&#x8393;&#x6D3E;&#xFF0C;&#x7ED9;Raspberry Pi&#x8BBE;&#x7F6E;&#x9759;&#x6001;IP</a></p>
+<p><a href="https://linuxhandbook.com/find-ip-address/" target="_blank">&#x4F7F;&#x7528;&#x591A;&#x79CD;Linux&#x547D;&#x4EE4;&#x627E;&#x5230;IP&#x5730;&#x5740;</a></p>
 
                                 
                                 </section>
@@ -509,12 +524,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 1. Raspberry简介">
+                <a href="updateupgrade.html" class="navigation navigation-prev " aria-label="Previous page: 2.2 更新系统">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="perspective.html" class="navigation navigation-next " aria-label="Next page: 2.2 两大方向">
+                <a href="passwd.html" class="navigation navigation-next " aria-label="Next page: 2.4 修改密码">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -525,7 +540,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1 模块","level":"1.2.1","depth":2,"next":{"title":"2.2 两大方向","level":"1.2.2","depth":2,"path":"modules/introduction/perspective.md","ref":"modules/introduction/perspective.md","articles":[]},"previous":{"title":"1. Raspberry简介","level":"1.2","depth":1,"path":"modules/introduction/README.md","ref":"modules/introduction/README.md","articles":[{"title":"2.1 模块","level":"1.2.1","depth":2,"path":"modules/introduction/mod.md","ref":"modules/introduction/mod.md","articles":[]},{"title":"2.2 两大方向","level":"1.2.2","depth":2,"path":"modules/introduction/perspective.md","ref":"modules/introduction/perspective.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/introduction/mod.md","mtime":"2021-08-16T17:19:18.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T13:35:06.198Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.3 固定IP地址","level":"1.3.3","depth":2,"next":{"title":"2.4 修改密码","level":"1.3.4","depth":2,"path":"modules/setting/passwd.md","ref":"modules/setting/passwd.md","articles":[]},"previous":{"title":"2.2 更新系统","level":"1.3.2","depth":2,"path":"modules/setting/updateupgrade.md","ref":"modules/setting/updateupgrade.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/setting/ip.md","mtime":"2021-08-17T13:20:41.468Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T13:35:06.198Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

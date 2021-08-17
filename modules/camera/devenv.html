@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.1 模块 · GitBook</title>
+        <title>4.2 创建虚拟环境 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="perspective.html" />
+    <link rel="next" href="opencv.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="virtualenv.html" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
             
-                <a href="./">
+                <a href="../introduction/">
             
                     
                     1. Raspberry简介
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="mod.html">
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/mod.html">
             
-                <a href="mod.html">
+                <a href="../introduction/mod.html">
             
                     
                     2.1 模块
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="perspective.html">
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/perspective.html">
             
-                <a href="perspective.html">
+                <a href="../introduction/perspective.html">
             
                     
                     2.2 两大方向
@@ -289,9 +289,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../camera/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../camera/">
+                <a href="./">
             
                     
                     4. 远程摄像头
@@ -303,9 +303,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../camera/virtualenv.html">
+        <li class="chapter " data-level="1.5.1" data-path="virtualenv.html">
             
-                <a href="../camera/virtualenv.html">
+                <a href="virtualenv.html">
             
                     
                     4.1 安装Virtualenv
@@ -316,9 +316,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../camera/devenv.html">
+        <li class="chapter active" data-level="1.5.2" data-path="devenv.html">
             
-                <a href="../camera/devenv.html">
+                <a href="devenv.html">
             
                     
                     4.2 创建虚拟环境
@@ -329,9 +329,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../camera/opencv.html">
+        <li class="chapter " data-level="1.5.3" data-path="opencv.html">
             
-                <a href="../camera/opencv.html">
+                <a href="opencv.html">
             
                     
                     4.3 安装OpenCV
@@ -342,9 +342,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../camera/packages.html">
+        <li class="chapter " data-level="1.5.4" data-path="packages.html">
             
-                <a href="../camera/packages.html">
+                <a href="packages.html">
             
                     
                     4.4 安装其他包
@@ -355,9 +355,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../camera/client.html">
+        <li class="chapter " data-level="1.5.5" data-path="client.html">
             
-                <a href="../camera/client.html">
+                <a href="client.html">
             
                     
                     4.5 发送端py文件
@@ -368,9 +368,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6" data-path="../camera/server.html">
+        <li class="chapter " data-level="1.5.6" data-path="server.html">
             
-                <a href="../camera/server.html">
+                <a href="server.html">
             
                     
                     4.6 接收端py文件
@@ -461,7 +461,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >2.1 模块</a>
+        <a href="../.." >4.2 创建虚拟环境</a>
     </h1>
 </div>
 
@@ -476,12 +476,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="21-&#x6A21;&#x5757;">2.1 &#x6A21;&#x5757;</h1>
-<h4 id="&#x914D;&#x7F6E;virtualenv"><font color="#A52A2A">&#x914D;&#x7F6E;Virtualenv</font></h4>
-<p>&#x914D;&#x7F6E;&#x754C;&#x9762;</p>
+                                <h1 id="42-&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;">4.2 &#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;</h1>
+<h3 id="&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;"><font color="#A52A2A">&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;</font></h3>
+<h4 id="&#x521B;&#x5EFA;">&#x521B;&#x5EFA;</h4>
+<p>&#x521B;&#x5EFA;&#x5E0C;&#x671B;&#x4FDD;&#x5B58;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x8FDB;&#x5165;&#x5176;&#x4E2D;&#x3002;</p>
+<p>&#x6211;&#x521B;&#x5EFA;&#x7684;&#x76EE;&#x5F55;&#x662F;<code>/home/pi/.virtualenvs</code></p>
+<p><code>cd /home/pi/.virtualenvs</code>&#x8FDB;&#x5165;&#x76EE;&#x6807;&#x76EE;&#x5F55;&#x540E;&#xFF0C;&#x4F8B;&#x5982;&#x521B;&#x5EFA;&#x540D;&#x4E3A;<strong>gp37</strong>&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF1A;</p>
 <blockquote>
-<p>sudo raspi-config</p>
+<p>virtualenv gp37 --python=python3.7</p>
 </blockquote>
+<p>&#x5982;&#x679C;&#x51FA;&#x73B0;<code>/home/pi/.virtualenvs/gp37</code>&#xFF0C;&#x8BF4;&#x660E;&#x521B;&#x5EFA;&#x6210;&#x529F;</p>
+<h4 id="&#x6FC0;&#x6D3B;">&#x6FC0;&#x6D3B;</h4>
+<p>&#x4F7F;&#x7528;source&#x6FC0;&#x6D3B;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x3002;</p>
+<p>&#x6839;&#x636E;<code>pwd</code>&#x6240;&#x5728;&#x7684;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0D;&#x540C;&#xFF0C;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x8C03;&#x6574;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x662F;<code>/home/pi/.virtualenvs/</code>&#xFF0C;&#x5219;&#x8F93;&#x5165;</p>
+<blockquote>
+<p>source /gp37/bin/activate</p>
+</blockquote>
+<p>&#x5982;&#x679C;&#x547D;&#x4EE4;&#x884C;&#x51FA;&#x73B0;&#x4E86;<code>(gp37)</code>&#x5B57;&#x6837;&#xFF0C;&#x8BF4;&#x660E;&#x6FC0;&#x6D3B;&#x6210;&#x529F;</p>
+<h4 id="&#x67E5;&#x770B;">&#x67E5;&#x770B;</h4>
+<p>&#x67E5;&#x770B;pip&#x8DEF;&#x5F84;</p>
+<blockquote>
+<p>pip --version</p>
+</blockquote>
+<p>&#x5982;&#x679C;pip&#x7684;&#x8DEF;&#x5F84;&#x662F;&#x5728;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x7684;&#x6587;&#x4EF6;&#x5939;[env_name]&#x4E2D;&#xFF0C;&#x5219;OK</p>
+<p>&#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7684;&#x5305;</p>
+<blockquote>
+<p>pip list</p>
+</blockquote>
+<h4 id="&#x5220;&#x9664;">&#x5220;&#x9664;</h4>
+<blockquote>
+<p>rm -r</p>
+</blockquote>
+<p>&#x76F4;&#x63A5;&#x5220;&#x9664;[env_name]&#x7684;&#x6587;&#x4EF6;&#x5939;</p>
 
                                 
                                 </section>
@@ -509,12 +536,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 1. Raspberry简介">
+                <a href="virtualenv.html" class="navigation navigation-prev " aria-label="Previous page: 4.1 安装Virtualenv">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="perspective.html" class="navigation navigation-next " aria-label="Next page: 2.2 两大方向">
+                <a href="opencv.html" class="navigation navigation-next " aria-label="Next page: 4.3 安装OpenCV">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -525,7 +552,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1 模块","level":"1.2.1","depth":2,"next":{"title":"2.2 两大方向","level":"1.2.2","depth":2,"path":"modules/introduction/perspective.md","ref":"modules/introduction/perspective.md","articles":[]},"previous":{"title":"1. Raspberry简介","level":"1.2","depth":1,"path":"modules/introduction/README.md","ref":"modules/introduction/README.md","articles":[{"title":"2.1 模块","level":"1.2.1","depth":2,"path":"modules/introduction/mod.md","ref":"modules/introduction/mod.md","articles":[]},{"title":"2.2 两大方向","level":"1.2.2","depth":2,"path":"modules/introduction/perspective.md","ref":"modules/introduction/perspective.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/introduction/mod.md","mtime":"2021-08-16T17:19:18.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T13:35:06.198Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.2 创建虚拟环境","level":"1.5.2","depth":2,"next":{"title":"4.3 安装OpenCV","level":"1.5.3","depth":2,"path":"modules/camera/opencv.md","ref":"modules/camera/opencv.md","articles":[]},"previous":{"title":"4.1 安装Virtualenv","level":"1.5.1","depth":2,"path":"modules/camera/virtualenv.md","ref":"modules/camera/virtualenv.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/camera/devenv.md","mtime":"2021-08-17T13:29:43.439Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T13:35:06.198Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

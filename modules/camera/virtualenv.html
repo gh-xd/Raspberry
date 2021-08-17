@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.1 模块 · GitBook</title>
+        <title>4.1 安装Virtualenv · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="perspective.html" />
+    <link rel="next" href="devenv.html" />
     
     
     <link rel="prev" href="./" />
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
             
-                <a href="./">
+                <a href="../introduction/">
             
                     
                     1. Raspberry简介
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="mod.html">
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/mod.html">
             
-                <a href="mod.html">
+                <a href="../introduction/mod.html">
             
                     
                     2.1 模块
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="perspective.html">
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/perspective.html">
             
-                <a href="perspective.html">
+                <a href="../introduction/perspective.html">
             
                     
                     2.2 两大方向
@@ -289,9 +289,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../camera/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../camera/">
+                <a href="./">
             
                     
                     4. 远程摄像头
@@ -303,9 +303,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../camera/virtualenv.html">
+        <li class="chapter active" data-level="1.5.1" data-path="virtualenv.html">
             
-                <a href="../camera/virtualenv.html">
+                <a href="virtualenv.html">
             
                     
                     4.1 安装Virtualenv
@@ -316,9 +316,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../camera/devenv.html">
+        <li class="chapter " data-level="1.5.2" data-path="devenv.html">
             
-                <a href="../camera/devenv.html">
+                <a href="devenv.html">
             
                     
                     4.2 创建虚拟环境
@@ -329,9 +329,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../camera/opencv.html">
+        <li class="chapter " data-level="1.5.3" data-path="opencv.html">
             
-                <a href="../camera/opencv.html">
+                <a href="opencv.html">
             
                     
                     4.3 安装OpenCV
@@ -342,9 +342,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../camera/packages.html">
+        <li class="chapter " data-level="1.5.4" data-path="packages.html">
             
-                <a href="../camera/packages.html">
+                <a href="packages.html">
             
                     
                     4.4 安装其他包
@@ -355,9 +355,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../camera/client.html">
+        <li class="chapter " data-level="1.5.5" data-path="client.html">
             
-                <a href="../camera/client.html">
+                <a href="client.html">
             
                     
                     4.5 发送端py文件
@@ -368,9 +368,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.6" data-path="../camera/server.html">
+        <li class="chapter " data-level="1.5.6" data-path="server.html">
             
-                <a href="../camera/server.html">
+                <a href="server.html">
             
                     
                     4.6 接收端py文件
@@ -461,7 +461,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >2.1 模块</a>
+        <a href="../.." >4.1 安装Virtualenv</a>
     </h1>
 </div>
 
@@ -476,12 +476,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="21-&#x6A21;&#x5757;">2.1 &#x6A21;&#x5757;</h1>
-<h4 id="&#x914D;&#x7F6E;virtualenv"><font color="#A52A2A">&#x914D;&#x7F6E;Virtualenv</font></h4>
-<p>&#x914D;&#x7F6E;&#x754C;&#x9762;</p>
+                                <h1 id="41-&#x5B89;&#x88C5;virtualenv">4.1 &#x5B89;&#x88C5;Virtualenv</h1>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B89;&#x88C5;virtualenv"><font color="#A52A2A">&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B89;&#x88C5;Virtualenv</font></h3>
+<p>&#x4E00;&#x822C;&#x4F1A;&#x4F7F;&#x7528;Conda&#xFF08;Anoconda&#xFF09;&#x6765;&#x521B;&#x5EFA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6811;&#x8393;&#x6D3E;&#x662F;ARM&#x67B6;&#x6784;&#xFF0C;Conda&#x4EC5;&#x652F;&#x6301;x86&#x67B6;&#x6784;&#xFF0C;buster&#x955C;&#x50CF;&#x662F;32&#x4F4D;&#x7684;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x6811;&#x8393;&#x6D3E;&#x4E0A;&#x7684;Conda&#x4EE3;&#x66FF;&#x65B9;&#x6848;&#x662F;Miniconda&#xFF0C;&#x4F46;&#x662F;&#x8BB8;&#x4E45;&#x4E0D;&#x66F4;&#x65B0;&#xFF0C;&#x4E14;&#x5751;&#x591A;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#xFF0C;&#x5728;&#x6811;&#x8393;&#x6D3E;&#x4E2D;&#x4F7F;&#x7528;Virtualenvl&#x4F5C;&#x4E3A;&#x7BA1;&#x7406;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x3002;</p>
+<h3 id="&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;"><font color="#A52A2A">&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;</font></h3>
+<p>&#x91C7;&#x7528;apt-get&#x7684;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;</p>
 <blockquote>
-<p>sudo raspi-config</p>
+<p>sudo apt-get install  virtualenv</p>
 </blockquote>
+<p>&#x624D;&#x7528;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#xFF1F;</p>
+<h3 id="&#x5176;&#x5B83;"><font color="#A52A2A">&#x5176;&#x5B83;</font></h3>
+<p>&#x67E5;&#x770B;&#x6811;&#x8393;&#x6D3E;&#x91CC;&#x901A;&#x8FC7;apt-get&#x5B89;&#x88C5;&#x8FC7;&#x7684;&#x5305;</p>
+<blockquote>
+<p>apt list --installed</p>
+</blockquote>
+<p>&#x7ED3;&#x679C;&#x592A;&#x591A;&#xFF0C;&#x7528;<code>grep</code>&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;</p>
+<blockquote>
+<p>apt list --installed | grep <user input...=""></user></p>
+</blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x8BB8;&#x591A;&#x53C2;&#x8003;&#x8D44;&#x6599;&#x91CC;&#x9700;&#x8981;&#x5B89;&#x88C5;virtualwrapper?
+&#x600E;&#x6837;&#x67E5;&#x770B;&#x81EA;&#x5DF1;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;virtualwrapper?</p>
+<h3 id="&#x53C2;&#x8003;virtualenv"><font color="#A52A2A">&#x53C2;&#x8003;Virtualenv</font></h3>
+<p><a href="https://blog.csdn.net/m0_37221216/article/details/88077931" target="_blank">&#x6811;&#x8393;&#x6D3E;&#x5B89;&#x88C5;virtualenv&#x548C;Virtualenvwrapper</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/92669002" target="_blank">&#x6811;&#x8393;&#x6D3E;raspberry4B&#x5165;&#x5751;&#x6307;&#x5357; part-1 virtualenv&#x5B89;&#x88C5;python</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/57472336" target="_blank">&#x5982;&#x4F55;&#x5217;&#x51FA; Ubuntu &#x548C; Debian &#x4E0A;&#x5DF2;&#x5B89;&#x88C5;&#x7684;&#x8F6F;&#x4EF6;&#x5305;</a></p>
 
                                 
                                 </section>
@@ -509,12 +529,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 1. Raspberry简介">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 4. 远程摄像头">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="perspective.html" class="navigation navigation-next " aria-label="Next page: 2.2 两大方向">
+                <a href="devenv.html" class="navigation navigation-next " aria-label="Next page: 4.2 创建虚拟环境">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -525,7 +545,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1 模块","level":"1.2.1","depth":2,"next":{"title":"2.2 两大方向","level":"1.2.2","depth":2,"path":"modules/introduction/perspective.md","ref":"modules/introduction/perspective.md","articles":[]},"previous":{"title":"1. Raspberry简介","level":"1.2","depth":1,"path":"modules/introduction/README.md","ref":"modules/introduction/README.md","articles":[{"title":"2.1 模块","level":"1.2.1","depth":2,"path":"modules/introduction/mod.md","ref":"modules/introduction/mod.md","articles":[]},{"title":"2.2 两大方向","level":"1.2.2","depth":2,"path":"modules/introduction/perspective.md","ref":"modules/introduction/perspective.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/introduction/mod.md","mtime":"2021-08-16T17:19:18.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T13:35:06.198Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.1 安装Virtualenv","level":"1.5.1","depth":2,"next":{"title":"4.2 创建虚拟环境","level":"1.5.2","depth":2,"path":"modules/camera/devenv.md","ref":"modules/camera/devenv.md","articles":[]},"previous":{"title":"4. 远程摄像头","level":"1.5","depth":1,"path":"modules/camera/README.md","ref":"modules/camera/README.md","articles":[{"title":"4.1 安装Virtualenv","level":"1.5.1","depth":2,"path":"modules/camera/virtualenv.md","ref":"modules/camera/virtualenv.md","articles":[]},{"title":"4.2 创建虚拟环境","level":"1.5.2","depth":2,"path":"modules/camera/devenv.md","ref":"modules/camera/devenv.md","articles":[]},{"title":"4.3 安装OpenCV","level":"1.5.3","depth":2,"path":"modules/camera/opencv.md","ref":"modules/camera/opencv.md","articles":[]},{"title":"4.4 安装其他包","level":"1.5.4","depth":2,"path":"modules/camera/packages.md","ref":"modules/camera/packages.md","articles":[]},{"title":"4.5 发送端py文件","level":"1.5.5","depth":2,"path":"modules/camera/client.md","ref":"modules/camera/client.md","articles":[]},{"title":"4.6 接收端py文件","level":"1.5.6","depth":2,"path":"modules/camera/server.md","ref":"modules/camera/server.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/camera/virtualenv.md","mtime":"2021-08-17T13:27:39.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T13:35:06.198Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
