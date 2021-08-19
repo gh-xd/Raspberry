@@ -477,7 +477,41 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="45-&#x53D1;&#x9001;&#x7AEF;py&#x6587;&#x4EF6;">4.5 &#x53D1;&#x9001;&#x7AEF;py&#x6587;&#x4EF6;</h1>
+<p>&#x6811;&#x8393;&#x6D3E;&#x4F7F;&#x7528;&#x5B98;&#x65B9;&#x7684;CSI&#x6444;&#x50CF;&#x5934;&#x3001;&#x5229;&#x7528;picamera&#x5305;&#xFF0C;&#x8FDB;&#x884C;&#x89C6;&#x9891;<strong>&#x91C7;&#x96C6;</strong>&#x3002;
+&#x91C7;&#x96C6;&#x540E;&#x7684;&#x753B;&#x9762;&#x8FDB;&#x884C;<strong>&#x7F16;&#x7801;</strong>&#xFF0C;&#x7136;&#x540E;&#x53D1;&#x7ED9;&#x89C6;&#x9891;<strong>&#x63A5;&#x6536;&#x7AEF;</strong>&#x3002;</p>
+<pre><code>import cv2
+import zmq
+import base64
+import picamera
+from picamera.array import PiRGBArray
 
+# &#x89C6;&#x9891;&#x63A5;&#x6536;&#x7AEF;&#x7684;IP&#x5730;&#x5740;
+IP = &apos;192.168.0.16&apos;
+
+# &#x521D;&#x59CB;&#x5316;&#x6444;&#x50CF;&#x5934;
+camera = picamera.PiCamera()
+camera.resolution = (640, 480) # &#x5206;&#x8FA8;&#x7387;
+camera.framerate = 20 # &#x5E27;&#x7387;
+rawCapture = PiRGBArray(camera, size=(640, 480)) # &#xFF1F;
+
+# &#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;&#x7528;&#x6765;&#x53D1;&#x9001;&#x5E27;&#x7684;zmq&#x5BF9;&#x8C61;
+# &#x6B64;&#x5904;&#x4F7F;&#x7528;&#x4E86;tcp&#x901A;&#x4FE1;&#x534F;&#x8BAE;&#xFF0C;&#x5176;&#x4E2D;5555&#x4E3A;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;
+# &#x8981;&#x786E;&#x4FDD;&#x53D1;&#x9001;&#x7AEF;&#x548C;&#x63A5;&#x6536;&#x7AEF;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x4E00;&#x6837;
+context = zmq.Context()
+footage_socket = context.socket(zmq.PAIR)
+footage_socket.connect(&apos;tcp://%s:5555&apos;%IP)
+print(IP)
+
+# &#x5FAA;&#x73AF;&#x4ECE;&#x6444;&#x50CF;&#x5934;&#x91C7;&#x96C6;&#x56FE;&#x50CF;
+# &#x56E0;&#x4E3A;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x6811;&#x8393;&#x6D3E;&#x6444;&#x50CF;&#x5934;&#xFF0C;&#x6240;&#x4EE5;use_video_port=True
+# &#x7531;&#x4E8E;imencode()&#x51FD;&#x6570;&#x9700;&#x8981;&#x4F20;&#x5165;numpy array&#x6216;&#x8005;scalar&#x6765;&#x7F16;&#x7801;&#x56FE;&#x50CF;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5C06;&#x91C7;&#x96C6;&#x5230;&#x7684;frame&#x8F6C;&#x5316;&#x4E3A;numpy array
+for frame in camera.capture_continuous(rawCapture, format=&quot;bgr&quot;, use_video_port=True):
+    frame_image = frame.array
+    encoded, buffer = cv2.imencode(&apos;.jpg&apos;, frame_image) # &#x5C06;frame&#x7F16;&#x7801;&#x6210;&#x6D41;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x5230;&#x5185;&#x5B58;&#x7F13;&#x5B58;
+    jpg_as_text = base64.b64encode(buffer) # &#x7F13;&#x5B58;&#x4E2D;&#x7684;&#x6D41;&#x6570;&#x636E;&#x901A;&#x8FC7;base64&#x7F16;&#x7801;&#x540E;
+    footage_socket.send(jpg_as_text) # &#x53D1;&#x9001;&#x7ED9;&#x89C6;&#x9891;&#x63A5;&#x6536;&#x7AEF;
+    rawCapture.truncate(0) # &#x6700;&#x540E;&#xFF0C;&#x91CA;&#x653E;&#x8D44;&#x6E90;&#x4E3A;&#x5904;&#x7406;&#x4E0B;&#x4E00;&#x5E27;&#x505A;&#x51C6;&#x5907;
+</code></pre>
                                 
                                 </section>
                             
@@ -520,7 +554,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.5 发送端py文件","level":"1.5.5","depth":2,"next":{"title":"4.6 接收端py文件","level":"1.5.6","depth":2,"path":"modules/camera/server.md","ref":"modules/camera/server.md","articles":[]},"previous":{"title":"4.4 安装其他包","level":"1.5.4","depth":2,"path":"modules/camera/packages.md","ref":"modules/camera/packages.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/camera/client.md","mtime":"2021-08-16T08:42:04.826Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T13:35:06.198Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.5 发送端py文件","level":"1.5.5","depth":2,"next":{"title":"4.6 接收端py文件","level":"1.5.6","depth":2,"path":"modules/camera/server.md","ref":"modules/camera/server.md","articles":[]},"previous":{"title":"4.4 安装其他包","level":"1.5.4","depth":2,"path":"modules/camera/packages.md","ref":"modules/camera/packages.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/camera/client.md","mtime":"2021-08-17T15:40:48.147Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T15:50:15.555Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -528,6 +562,10 @@
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

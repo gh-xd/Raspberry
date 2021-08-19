@@ -477,6 +477,52 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="43-&#x5B89;&#x88C5;opencv">4.3 &#x5B89;&#x88C5;OpenCV</h1>
+<p>&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x5B89;&#x88C5;OpenCV&#x3002;</p>
+<p>1. &#x5728;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E2D; <code>pip install opencv-python</code></p>
+<p>2. &#x5B89;&#x88C5;.whl&#x6587;&#x4EF6;&#xFF0C;&#x7F51;&#x4E0A;&#x80FD;&#x641C;&#x5230;&#x3002;</p>
+<h3 id="&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;"><font color="#A52A2A">&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;</font></h3>
+<h4 id="&#x6FC0;&#x6D3B;&#x865A;&#x62DF;&#x73AF;&#x5883;">&#x6FC0;&#x6D3B;&#x865A;&#x62DF;&#x73AF;&#x5883;</h4>
+<blockquote>
+<p>cd /home/pi/.virtualenvs</p>
+<p>source /gp37/bin/activate</p>
+</blockquote>
+<h4 id="pip&#x5B89;&#x88C5;opencv">pip&#x5B89;&#x88C5;opencv</h4>
+<blockquote>
+<p>pip install opencv-python</p>
+</blockquote>
+<h4 id="&#x68C0;&#x6D4B;">&#x68C0;&#x6D4B;</h4>
+<pre><code>python3
+import cv2
+</code></pre><h3 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><font color="#A52A2A">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</font></h3>
+<h4 id="1-&#x5B89;&#x88C5;&#x671F;&#x95F4;&#x7684;&#x95EE;&#x9898;">1. &#x5B89;&#x88C5;&#x671F;&#x95F4;&#x7684;&#x95EE;&#x9898;</h4>
+<p>&#x6211;&#x5728;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#x51FA;&#x73B0;&#x4E86;&#x4EE5;&#x4E0B;&#x9519;&#x8BEF;
+<code>ImportError: libcblas.so.3: cannot open shared object file: No such file or directory</code></p>
+<p>&#x5C1D;&#x8BD5;<code>pip install libcblas-dev</code>&#xFF0C;&#x4F46;&#x662F;PyPif&#x91CC;&#x627E;&#x4E0D;&#x5230;&#x8FD9;&#x4E2A;&#x5305;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x6211;&#x5728;&#x5168;&#x5C40;&#x5B89;&#x88C5;&#x4E86;&#x5176;&#x4ED6;&#x4F9D;&#x8D56;&#xFF0C;&#x4E00;&#x4E2A;&#x4E2A;&#x8BD5;&#xFF0C;&#x4F46;&#x5E76;&#x4E0D;&#x77E5;&#x9053;&#x95EE;&#x9898;&#x51FA;&#x5728;&#x54EA;&#x91CC;&#x3002;</p>
+<pre><code>sudo apt-get install libcblas-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libjasper-dev
+
+sudo apt-get install libqt4-test
+sudo apt-get install libqtgui4
+
+sudo apt-get install libhdf5-dev
+sudo apt-get install libhdf5-serial-dev
+
+sudo apt-get update
+</code></pre><p>&#x603B;&#x4E4B;&#xFF0C;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x3002;</p>
+<h4 id="2-&#x5B89;&#x88C5;&#x62D3;&#x5C55;">2. &#x5B89;&#x88C5;&#x62D3;&#x5C55;</h4>
+<blockquote>
+<p>pip install opencv-contrib-python</p>
+</blockquote>
+<p>&#x81F3;&#x4E8E;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B89;&#x88C5;&#xFF0C;&#x76EE;&#x524D;&#x8FD8;&#x4E0D;&#x6E05;&#x695A;&#x3002;</p>
+<p>&#x6211;&#x81EA;&#x5DF1;&#x76EE;&#x524D;&#x8FD8;&#x6CA1;&#x6709;&#x5B89;&#x88C5;&#x3002;</p>
+<h3 id="&#x53C2;&#x8003;"><font color="#A52A2A">&#x53C2;&#x8003;</font></h3>
+<p><a href="https://zhuanlan.zhihu.com/p/129881626" target="_blank">&#x6811;&#x8393;&#x6D3E;&#x6362;&#x6E90;&#x4EE5;&#x53CA;opencv&#x8FD8;&#x6709;opencv-contrib</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/92184435" target="_blank">&#x5728;&#x6811;&#x8393;&#x6D3E;&#x4E0A;&#x5B89;&#x88C5;&#x57FA;&#x4E8E;python3&#x7684;OpenCV</a></p>
+<p><a href="https://blog.csdn.net/qq_38269799/article/details/83384291" target="_blank">&#x6811;&#x8393;&#x6D3E;3B+&#x5B89;&#x88C5;opencv&#x5751;&#x70B9;,&#x9047;&#x5230;&#x4E86;ImportError...</a></p>
+<p><a href="https://blog.csdn.net/kevindree/article/details/88772691" target="_blank">&#x6811;&#x8393;&#x6D3E;&#x4E2D;&#x5BFC;&#x5165;opencv&#x5E93;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x62A5;&#x5E93;&#x6587;&#x4EF6;&#x7F3A;&#x5931;&#x7684;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF08;mportError: libcblas.so.3 ..... etc.&#xFF09;</a></p>
+<p><a href="https://blog.csdn.net/u014093016/article/details/112916470" target="_blank">&#x6811;&#x8393;&#x6D3E;import cv2&#x62A5;&#x9519;libcblas.so.3&#x4E0D;&#x5B58;&#x5728;</a></p>
 
                                 
                                 </section>
@@ -520,7 +566,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3 安装OpenCV","level":"1.5.3","depth":2,"next":{"title":"4.4 安装其他包","level":"1.5.4","depth":2,"path":"modules/camera/packages.md","ref":"modules/camera/packages.md","articles":[]},"previous":{"title":"4.2 创建虚拟环境","level":"1.5.2","depth":2,"path":"modules/camera/devenv.md","ref":"modules/camera/devenv.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/camera/opencv.md","mtime":"2021-08-16T08:42:04.823Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T13:35:06.198Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3 安装OpenCV","level":"1.5.3","depth":2,"next":{"title":"4.4 安装其他包","level":"1.5.4","depth":2,"path":"modules/camera/packages.md","ref":"modules/camera/packages.md","articles":[]},"previous":{"title":"4.2 创建虚拟环境","level":"1.5.2","depth":2,"path":"modules/camera/devenv.md","ref":"modules/camera/devenv.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/camera/opencv.md","mtime":"2021-08-17T14:23:32.221Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T15:50:15.555Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -528,6 +574,10 @@
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>

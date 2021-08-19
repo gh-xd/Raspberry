@@ -477,7 +477,28 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="46-&#x63A5;&#x6536;&#x7AEF;py&#x6587;&#x4EF6;">4.6 &#x63A5;&#x6536;&#x7AEF;py&#x6587;&#x4EF6;</h1>
+<p>&#x63A5;&#x6536;&#x7AEF;&#x548C;&#x53D1;&#x9001;&#x7AEF;&#xFF08;&#x6811;&#x8393;&#x6D3E;&#xFF09;&#x6240;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x7684;python&#x5305;&#x4E00;&#x6837;&#x3002;
+&#x53EF;&#x4EE5;&#x5728;&#x63A5;&#x6536;&#x7AEF;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0E;&#x53D1;&#x9001;&#x7AEF;&#x4E00;&#x6A21;&#x4E00;&#x6837;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5728;windows&#x6216;linux&#x4E0A;&#x90FD;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x3002;</p>
+<pre><code>import cv2
+import zmq
+import base64
+import numpy as np
 
+# &#x5B9E;&#x4F8B;&#x5316;&#x7528;&#x6765;&#x63A5;&#x6536;&#x5E27;&#x7684;zmq&#x5BF9;&#x8C61;
+# &#x6CE8;&#x610F;&#x6B64;&#x5904;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x8981;&#x548C;&#x53D1;&#x9001;&#x7AEF;&#xFF08;&#x6811;&#x8393;&#x6D3E;&#xFF09;&#x4E0A;.py&#x5185;&#x8BBE;&#x7F6E;&#x7684;&#x4E00;&#x6837;
+context = zmq.Context()
+footage_socket = context.socket(zmq.PAIR)
+footage_socket.bind(&apos;tcp://*:5555&apos;)
+
+while True:
+    frame = footage_socket.recv_string() # &#x63A5;&#x6536;&#x5230;&#x6570;&#x636E;
+    img = base64.b64decode(frame) # &#x89E3;&#x7801;&#x5E76;&#x4FDD;&#x5B58;&#x5230;&#x7F13;&#x5B58;&#x4E2D;
+    npimg = np.frombuffer(img, dtype=np.uint8) # &#x5C06;&#x89E3;&#x7801;&#x7684;&#x5185;&#x5BB9;&#x8F6C;&#x5316;&#x4E3A;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;
+    source = cv2.imdecode(npimg,1) # &#x5C06;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x89E3;&#x7801;&#x4E3A;&#x56FE;&#x50CF;
+    cv2.imshow(&quot;Stream&quot;, source) # &#x663E;&#x793A;&#x56FE;&#x50CF;
+    cv2.waitKey(1) # &#x4E00;&#x822C;&#x5728;imshow()&#x540E;&#x6447;&#x4F7F;&#x7528;waitKey()&#xFF0C;&#x7ED9;&#x56FE;&#x50CF;&#x7ED8;&#x5236;&#x7559;&#x4E0B;&#x65F6;&#x95F4;&#xFF0C;&#x4E0D;&#x7136;&#x7A97;&#x53E3;&#x4F1A;&#x51FA;&#x73B0;&#x65E0;&#x54CD;&#x5E94;&#x7684;&#x60C5;&#x51B5;
+</code></pre>
                                 
                                 </section>
                             
@@ -520,7 +541,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.6 接收端py文件","level":"1.5.6","depth":2,"next":{"title":"4. Raspberry嵌入式","level":"1.6","depth":1,"path":"modules/embed/intro.md","ref":"modules/embed/intro.md","articles":[{"title":"4.1 待定一","level":"1.6.1","depth":2,"path":"modules/embed/tbd1.md","ref":"modules/embed/tbd1.md","articles":[]},{"title":"4.2 待定二","level":"1.6.2","depth":2,"path":"modules/embed/tbd2.md","ref":"modules/embed/tbd2.md","articles":[]}]},"previous":{"title":"4.5 发送端py文件","level":"1.5.5","depth":2,"path":"modules/camera/client.md","ref":"modules/camera/client.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/camera/server.md","mtime":"2021-08-16T08:42:04.827Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T13:35:06.198Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.6 接收端py文件","level":"1.5.6","depth":2,"next":{"title":"4. Raspberry嵌入式","level":"1.6","depth":1,"path":"modules/embed/intro.md","ref":"modules/embed/intro.md","articles":[{"title":"4.1 待定一","level":"1.6.1","depth":2,"path":"modules/embed/tbd1.md","ref":"modules/embed/tbd1.md","articles":[]},{"title":"4.2 待定二","level":"1.6.2","depth":2,"path":"modules/embed/tbd2.md","ref":"modules/embed/tbd2.md","articles":[]}]},"previous":{"title":"4.5 发送端py文件","level":"1.5.5","depth":2,"path":"modules/camera/client.md","ref":"modules/camera/client.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"modules/camera/server.md","mtime":"2021-08-17T15:50:07.049Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-17T15:50:15.555Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -528,6 +549,10 @@
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
